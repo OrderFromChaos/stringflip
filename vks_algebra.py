@@ -3,9 +3,11 @@ from functools import reduce
 import sys
 
 def Syntax():
+    # Everything here is from pyparsing
     lpar  = pp.Literal( '(' ).suppress()
     rpar  = pp.Literal( ')' ).suppress()
-    substr = pp.Word(pp.alphanums)
+    # All printable characters except ()
+    substr = pp.Word(r"""0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&'*+,-./:;<=>?@[\]^_`{|}~""")
     expr = pp.Forward()
     atom = substr | pp.Group(lpar + expr + rpar)
     expr << atom + pp.ZeroOrMore(atom)
