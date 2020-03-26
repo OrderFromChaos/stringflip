@@ -1,5 +1,7 @@
 # stringflip
 
+https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
+
 Why do I use the method I use on vks_algebra? Well, you could read the string forward and flip them individually as you go, but I came upon an insight that helped make it significantly faster:
 
 I'm rewriting the string a lot of unnecessary times; what if my strings are a million long?
